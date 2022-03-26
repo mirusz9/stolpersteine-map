@@ -6217,6 +6217,8 @@ const redIcon = new L.Icon({
 	shadowSize: [41, 41],
 });
 
+let count = 0;
+
 const markers = locations.map((location, i) => {
 	const coords = location.position.coordinates.reverse();
 
@@ -6225,9 +6227,17 @@ const markers = locations.map((location, i) => {
 
 	let popup = `<h3>${location.stonesCount} ${stoneNumber} at ${location.translations[0].address}</h3> <ul>`;
 	const stones = names[i].stones;
+	count += stones.length;
 
 	stones.forEach((stone) => {
-		popup += '<li>' + stone.name + '</li>';
+		popup +=
+			'<li>' +
+			stone.name +
+			' (' +
+			stone.dateOfBirth.split('-')[2] +
+			' - ' +
+			stone.dateOfPassing.split('-')[2] +
+			')</li>';
 	});
 
 	popup += '</ul>';
@@ -6235,3 +6245,4 @@ const markers = locations.map((location, i) => {
 	marker.bindPopup(popup);
 	return marker;
 });
+console.log(count);
