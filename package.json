@@ -1,8 +1,0 @@
-{
-  "name": "stolpersteine-map",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/mirusz9/stolpersteine-map.git",
-  "author": "mirusz9 <adam.sztano@gmail.com>",
-  "license": "MIT"
-}
